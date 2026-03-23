@@ -1,6 +1,26 @@
 # Companion Health — Documentation System
 
-This repository is the source of truth for all system, product, brand, and AI architecture documentation for Companion Health.
+Companion Health — Intelligence Layer for Pet Health
+
+Companion Health is a multi-tenant, API-first intelligence platform that transforms pet behavioural and telemetry data into predictive health signals.
+
+Core System
+	•	Signal Engine (behaviour → signal transformation)
+	•	Risk Models (CKD → multi-condition roadmap)
+	•	Fetch API (intelligence delivery layer)
+	•	Insurance Intelligence (underwriting + claims optimization)
+
+System Components
+	•	Data Ingestion Engine
+	•	Signal Processing Layer
+	•	Risk Modeling Layer
+	•	API Layer (Fetch)
+
+Use Cases
+	•	Early disease detection (CKD)
+	•	Dynamic insurance underwriting
+	•	Claim prevention
+
 
 ---
 
