@@ -1,39 +1,50 @@
-# Companion Health — Documentation System
+Companion Health
 
-Companion Health — Intelligence Layer for Pet Health
+The Intelligence Layer for Pet Health
 
-Companion Health is a multi-tenant, API-first intelligence platform that transforms pet behavioural and telemetry data into predictive health signals.
+Companion Health is a multi-tenant, API-first platform that transforms pet behavioural and telemetry data into predictive health intelligence.
 
-Core System
-	•	Signal Engine (behaviour → signal transformation)
-	•	Risk Models (CKD → multi-condition roadmap)
-	•	Fetch API (intelligence delivery layer)
-	•	Insurance Intelligence (underwriting + claims optimization)
-
-System Components
-	•	Data Ingestion Engine
-	•	Signal Processing Layer
-	•	Risk Modeling Layer
-	•	API Layer (Fetch)
-
-Use Cases
-	•	Early disease detection (CKD)
+We enable:
+	•	Early disease detection (starting with CKD)
 	•	Dynamic insurance underwriting
-	•	Claim prevention
+	•	Claim prevention through signal-based insights
 
+⸻
+
+System Architecture
+
+Data Sources → Signal Engine → Risk Models → Fetch API → External Systems
+
+⸻
+
+Core Components
+	•	Signal Engine (behaviour → health signals)
+	•	Risk Models (CKD → multi-condition roadmap)
+	•	Fetch API (intelligence delivery)
+	•	Insurance Intelligence Layer
+
+⸻
+
+Why This Matters
+
+Pet healthcare today is reactive.
+
+Companion Health enables:
+
+Predictive, signal-driven decision-making before clinical diagnosis
+
+⸻
+
+Repository Structure
+	•	/architecture → system design
+	•	/product → execution playbooks
+	•	/demo → reproducible demo system
+	•	/ai-system → AI operating model
+	•	/brand → positioning & identity
 
 ---
 
-## Structure
 
-- `/brand` → Brand architecture and design system  
-- `/product` → Product modules (Fetch API, CKD model)  
-- `/architecture` → System architecture and data flows  
-- `/ai-system` → Claude skill system (Ulysses, Atlas, Forge)  
-- `/diagrams` → Mermaid diagram source files  
-- `/exports` → Generated documents for sharing  
-
----
 
 ## Principles
 
