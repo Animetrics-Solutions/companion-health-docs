@@ -185,3 +185,16 @@ This layer creates:
 	•	Proprietary datasets
 	•	Better models over time
 	•	Competitive advantage
+
+	FAILURE SCENARIOS
+	•	Missing data
+	•	Incorrect signals
+	•	API latency
+
+⸻
+
+SYSTEM RESPONSE
+	•	Fallback defaults
+	•	Graceful degradation
+	•	Logging
+
