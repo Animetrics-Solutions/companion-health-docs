@@ -181,3 +181,16 @@ Future:
 	•	Multi-condition risk
 	•	Claims prediction
 	•	Policy optimization
+
+	FAILURE SCENARIOS
+	•	Missing data
+	•	Incorrect signals
+	•	API latency
+
+⸻
+
+SYSTEM RESPONSE
+	•	Fallback defaults
+	•	Graceful degradation
+	•	Logging
+
