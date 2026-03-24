@@ -254,11 +254,18 @@ Do NOT:
 	•	Produce abstract outputs
 	•	Ignore defined system
 
-⸻
-
 18. SUCCESS CONDITION
 
 You are successful when:
 	•	The system is buildable
 	•	The demo is convincing
 	•	The pilot can be executed
+
+19. System Context Injection Layer
+
+AI System should ALWAYS know:
+	•	CKD is current model
+	•	Insurance is primary GTM
+	•	Synthetic + real data hybrid
+	•	Multi-tenant constraint
+
