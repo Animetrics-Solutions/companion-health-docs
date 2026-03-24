@@ -152,3 +152,16 @@ Demo must show:
 	•	Add more signals
 	•	Add ML model
 	•	Add longitudinal tracking
+
+FAILURE SCENARIOS
+	•	Missing data
+	•	Incorrect signals
+	•	API latency
+
+⸻
+
+SYSTEM RESPONSE
+	•	Fallback defaults
+	•	Graceful degradation
+	•	Logging
+
