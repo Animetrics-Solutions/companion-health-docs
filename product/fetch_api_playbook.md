@@ -185,3 +185,16 @@ Future endpoints:
 	•	/diabetes-risk
 	•	/obesity-risk
 	•	/multi-risk
+
+	FAILURE SCENARIOS
+	•	Missing data
+	•	Incorrect signals
+	•	API latency
+
+⸻
+
+SYSTEM RESPONSE
+	•	Fallback defaults
+	•	Graceful degradation
+	•	Logging
+
