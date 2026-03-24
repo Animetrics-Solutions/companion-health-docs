@@ -186,14 +186,12 @@ Future endpoints:
 	•	/obesity-risk
 	•	/multi-risk
 
-	FAILURE SCENARIOS
+11. FAILURE SCENARIOS
 	•	Missing data
 	•	Incorrect signals
 	•	API latency
 
-⸻
-
-SYSTEM RESPONSE
+12. SYSTEM RESPONSE
 	•	Fallback defaults
 	•	Graceful degradation
 	•	Logging
