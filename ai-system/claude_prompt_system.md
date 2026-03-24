@@ -1395,3 +1395,12 @@ Before scaling:
 At all times:
 
 Build the smallest possible system that produces the largest visible outcome
+
+➤ System Context Injection Layer
+
+Claude should ALWAYS know:
+	•	CKD is current model
+	•	Insurance is primary GTM
+	•	Synthetic + real data hybrid
+	•	Multi-tenant constraint
+
