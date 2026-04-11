@@ -1,193 +1,368 @@
-UI Screens — Companion Health
-Classification: INTERNAL — CONFIDENTIAL
-Version: v1.0
-Status: Production-Aligned
+# Companion Health — System Surface Wireframe Specification
+Version: v2.2
+Status: IMPLEMENTATION READY 
 
-⸻
+---
 
-1. PURPOSE
+# 0. SYSTEM MODEL OVERVIEW
 
-Defines all core UI screens required for:
-	•	Demo
-	•	MVP
-	•	Partner presentations
+SYSTEM PIPELINE
 
-⸻
+[ Raw Data ]
+      ↓
+[ Signal Detection System (SDS) ]
+      ↓
+[ Signals ]
+      ↓
+[ Risk Engine ]
+      ↓
+[ Risk Score ]
+      ↓
+[ System Surface (UI) ]
 
-2. SCREEN 1 — PET OVERVIEW DASHBOARD
+---
 
-Purpose
+# 1. CORE PRINCIPLE
 
-Provide a summary of pet health status and risk
+This is NOT a page.
 
-⸻
+This is a SYSTEM SURFACE.
 
-Layout
+The UI represents:
+A continuously running system exposing its current state.
 
-Top Section:
-	•	Pet profile (name, age, breed)
-	•	Risk score (primary focus)
-	•	Confidence indicator
+---
 
-⸻
+# 2. CANVAS MODEL
 
-Middle Section:
-	•	Signal Cards:
-	•	Hydration Drift
-	•	Weight Velocity
-	•	Activity Change
+Viewport (Desktop reference):
 
-⸻
++------------------------------------------------------+
+|                                                      |
+|              SYSTEM SURFACE FIELD                     |
+|        (center-aligned working region ~560px)         |
+|                                                      |
++------------------------------------------------------+
 
-Bottom Section:
-	•	Graphs:
-	•	Weight trend
-	•	Hydration trend
+No header / footer / page structure.
 
-⸻
+---
 
-Side Panel:
-	•	Explanation of risk
+# 3. SPATIAL LAYOUT MODEL
 
-⸻
+Elements are NOT stacked like a webpage.
 
-Output
-	•	Immediate understanding of health status
-	•	Clear risk visibility
+They exist relative to the system center (risk).
 
-⸻
+                [ SYSTEM STATUS ]
 
-3. SCREEN 2 — SIGNAL DETAIL VIEW
+                    [ META ]
 
-Purpose
+                     [72]
 
-Deep dive into individual signal
+                  [ STATUS ]
 
-⸻
+                [ SIGNALS ]
 
-Layout
+            [ PERSPECTIVE LENS ]
 
-Top:
-	•	Signal name
-	•	Current value
-	•	Baseline
+               [ CONTEXT ]
 
-⸻
+---
 
-Middle:
-	•	Time-series graph
+# 4. ELEMENT BREAKDOWN
 
-⸻
+---
 
-Bottom:
-	•	Interpretation panel
+## 4.1 RISK CORE (PRIMARY NODE)
 
-⸻
+Represents:
+- Risk Engine output
 
-Side:
-	•	Related signals
+                ┌────────────┐
+                │     72     │
+                └────────────┘
 
-⸻
+Rules:
+- Always central
+- Largest element
+- No competing visual weight
 
-Output
-	•	Understanding of signal behaviour
-	•	Contextual interpretation
+Behavior:
+- Updates only on real data change
+- Smooth transitions (no jumps)
 
-⸻
+---
 
-4. SCREEN 3 — INSURANCE VIEW
+## 4.2 STATUS LAYER
 
-Purpose
+Derived from risk + trajectory
 
-Enable underwriting decision-making
+                    MONITORED · ELEVATED
 
-⸻
+Mapping:
 
-Layout
+0–30 → Stable  
+31–60 → Monitored  
+61–80 → Elevated  
+81–100 → Critical  
 
-Top:
-	•	Two pets comparison
+---
 
-⸻
+## 4.3 SIGNALS (CAUSAL STRUCTURE)
 
-Middle:
-	•	Risk score comparison
-	•	Signal stability
+Signals must feel like inputs to risk.
 
-⸻
+        Hydration ↓
+        Weight ↓
+        Activity stable
 
-Bottom:
-	•	Insurance output:
-	•	Risk level
-	•	Cost band
-	•	Premium implication
+Causality model:
 
-⸻
+[ Hydration ↓ ]
+        \
+         → contributes to → [ RISK 72 ]
+        /
+[ Weight ↓ ]
 
-Output
-	•	Immediate risk differentiation
-	•	Pricing decision support
+Rules:
+- Max 3 signals
+- Sorted by contribution
+- Must not appear as UI list
 
-⸻
+---
 
-5. SCREEN 4 — TIMELINE VIEW
+## 4.4 PERSPECTIVE LENS
 
-Purpose
+Inline interpretation layer
 
-Show progression of risk over time
+Pet Parent   Insurance   Veterinary
 
-⸻
+Behavior:
 
-Layout
+          SAME SYSTEM STATE
+                  │
+    ┌─────────────┼─────────────┐
+    │             │             │
+Pet Parent   Insurance   Veterinary
+(view)        (view)        (view)
 
-Horizontal timeline:
-	•	Day 0 → Day 40
+Changes:
+- context
+- metrics
 
-⸻
+Does NOT change:
+- risk
+- signals
 
-Markers:
-	•	Signal drift
-	•	Risk increase
-	•	Diagnosis
+---
 
-⸻
+## 4.5 CONTEXT LAYER
 
-Bottom:
-	•	Insight panel
+Structured interpretation (NOT narrative)
 
-⸻
+Example:
 
-Output
-	•	Clear understanding of early detection window
+Hydration ↓ 14d  
+Weight ↓ 9%  
+Activity stable  
 
-⸻
+Pattern: localized decline  
 
-6. SCREEN 5 — API / TECH VIEW
+Rules:
+- Max 4 lines
+- No sentences
+- No explanation tone
 
-Purpose
+---
 
-Expose system output for technical stakeholders
+## 4.6 PET META
 
-⸻
+BRUNO · AGE 11 · DOMESTIC SHORTHAIR
 
-Layout
+Rules:
+- Low emphasis
+- Above risk
+- Non-interactive
 
-Left:
-	•	JSON response
+---
 
-Right:
-	•	Human-readable explanation
+## 4.7 SYSTEM STATUS
 
-⸻
+● SYSTEM LIVE
 
-Output
-	•	Transparency
-	•	Trust
+Rules:
+- Top-right
+- Minimal motion
+- No interaction
 
-⸻
+---
 
-7. SCREEN RELATIONSHIP
+# 5. STATE OVERLAY MODEL
 
-Overview → Signal → Risk → Insurance → Timeline
+Overlays extend the system.
+They DO NOT replace it.
 
+---
 
+## 5.1 SIGNAL DETAIL OVERLAY
+
+Trigger:
+- signal focus
+
+Structure:
+
+[ Signal: Hydration ↓ ]
+
+Baseline: 450ml  
+Current: 320ml  
+Z-score: -2.17  
+Duration: 4d  
+
+Graph (conceptual):
+
+Baseline -----
+             \
+              \____ Current
+
+---
+
+## 5.2 INSURANCE OVERLAY
+
+Comparison model:
+
+[ PET_TRW_001 ]      [ PET_TRW_002 ]
+       34                     72
+
+                  ↓
+
+           Risk Difference
+
+                  ↓
+
+           Premium Impact
+
+Rules:
+- PET_TRW_002 dominant
+- PET_TRW_001 background reference
+
+---
+
+## 5.3 TIMELINE OVERLAY
+
+Time-based causality:
+
+Day 0      Day 7      Day 14      Day 21
+  |          |          |           |
+Hydration ↓  Weight ↓   Risk ↑    Diagnosis
+
+Rules:
+- Only critical points
+- No dense charting
+
+---
+
+## 5.4 SYSTEM / TECH OVERLAY
+
+System visibility:
+
+[ Data Sources ]
+        ↓
+[ Ingestion ]
+        ↓
+[ SDS ]
+        ↓
+[ Risk Engine ]
+        ↓
+[ API Output ]
+
+Example Output:
+
+{
+  "risk_score": 72,
+  "confidence": 0.87,
+  "signals": ["hydration", "weight"]
+}
+
+---
+
+# 6. STATE TRANSITIONS
+
+SYSTEM STATE MODEL
+
+[ System Surface ]
+        │
+        ├── Signal Detail Overlay
+        ├── Insurance Overlay
+        ├── Timeline Overlay
+        └── System Overlay
+
+Rules:
+- No navigation
+- No page reload
+- Overlay only
+
+---
+
+# 7. MOTION MODEL
+
+Triggered ONLY by data change.
+
+Allowed:
+- risk pulse (threshold change)
+- signal emergence
+- subtle ambient drift
+
+Forbidden:
+- hover animations
+- decorative motion
+- looping effects
+
+---
+
+# 8. COLOR SYSTEM
+
+Neutral dominant
+
+Green → active  
+Amber → elevated  
+Red → critical  
+
+Rules:
+- color = meaning only
+- no decoration
+
+---
+
+# 9. TYPOGRAPHY
+
+Risk → dominant  
+System text → minimal  
+No expressive styling  
+
+---
+
+# 10. FAILURE CONDITIONS
+
+System fails if it becomes:
+
+- dashboard
+- SaaS UI
+- card-based layout
+- explanation-heavy
+
+---
+
+# 11. SUCCESS CONDITION
+
+User perception:
+
+"I am observing a system, not using an interface."
+
+---
+
+# FINAL PRINCIPLE
+
+The UI does not explain the system.
+
+The UI IS the system.
