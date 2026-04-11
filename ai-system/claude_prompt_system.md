@@ -1,4 +1,4 @@
-Claude Operating System — Companion Health
+Operating System — Companion Health
 Classification: INTERNAL — CONFIDENTIAL
 Version: v2.1
 Owner: Companion Health
@@ -10,7 +10,7 @@ Status: ACTIVE
 
 1.1 Purpose
 
-This system defines how Claude operates as a multi-role AI co-founder system for Companion Health.
+This system defines how AI operates as a multi-role AI co-founder system for Companion Health.
 
 It replaces ad-hoc prompting with:
 	•	Structured thinking
