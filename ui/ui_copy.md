@@ -1,8 +1,3 @@
-ui_copy.md
-
-Paste this:
-
-⸻
 
 UI Copy — Companion Health
 Classification: INTERNAL — CONFIDENTIAL
