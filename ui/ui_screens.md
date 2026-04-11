@@ -190,37 +190,4 @@ Output
 
 Overview → Signal → Risk → Insurance → Timeline
 
-⸻
 
-🧱 FILE 3 — /ui/ui_prompts.md (OPTIONAL BUT CLEAN)
-
-Paste this:
-
-⸻
-
-UI Prompts — Companion Health
-Purpose: Generate UI using Lovable / Claude
-
-⸻
-
-Dashboard Prompt
-
-[Use structured prompt from system]
-
-⸻
-
-Signal View Prompt
-
-[Use structured prompt]
-
-⸻
-
-Insurance View Prompt
-
-[Use structured prompt]
-
-⸻
-
-Timeline Prompt
-
-[Use structured prompt]
