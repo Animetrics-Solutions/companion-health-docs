@@ -1,8 +1,5 @@
 Companion Health - The Predictive Intelligence Layer for Pet Health & Insurance
 
-
-Companion Health 
-
 Companion Health is a multi-tenant, API-first platform that transforms pet behavioural and telemetry data into predictive health intelligence & real-time risk intelligence, enabling insurers and partners to make decisions before clinical diagnosis.
 
 We enable:
@@ -15,8 +12,6 @@ We enable:
 System Architecture
 
 Data Sources → Signal Engine → Risk Models → Fetch API → External Systems
-
-⸻
 
 Core Components
 	•	Signal Engine (behaviour → health signals)
